@@ -1,0 +1,37 @@
+#服务端口
+server:
+  port: 8009
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  application:
+    name: service-acl
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/guli?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+    username: root
+    password: 15159352857
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  redis:
+    lettuce:
+      pool:
+        max-active: 20
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    timeout: 1800000
+
+#配置mapper.xml文件路径
+mybatis-plus:
+  mapper-locations: classpath:com/yjh/aclservice/mapper/xml/*.xml
+# mybatis日志
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#指定注册中心地址

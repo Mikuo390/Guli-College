@@ -1,0 +1,49 @@
+# 服务端口
+server:
+  port: 8001
+
+# spring设置
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  application:
+    name: service-edu
+  profiles:
+    active: dev # 环境设置：dev、test、prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/guli?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+    username: root
+    password: 15159352857
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  mvc:
+    pathmatch:
+      use-suffix-pattern: true
+
+#配置mapper.xml文件路径
+mybatis-plus:
+  mapper-locations: classpath:com/yjh/eduservice/mapper/xml/*.xml
+# mybatis日志
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# 日志 warn,error,info,debug
+#logging.level.root: info
+
+# 开启熔断机制
+#feign:
+#  hystrix:
+#    enabled: true
+
+# 设置hystrix超时时间，默认1000ms
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 60000
