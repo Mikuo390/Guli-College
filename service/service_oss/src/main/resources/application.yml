@@ -16,6 +16,6 @@ aliyun:
   oss:
     file:
       endpoint: oss-cn-shanghai.aliyuncs.com
-      keyid: LTAI5tQ3jkgcJP4YCoDZQ58K
-      keysecret: 2izdliY5Ef7psxpkC972WvfPO0ZNCC
+      keyid: keyid
+      keysecret: keysecret
       bucketname: edu-mikuo
